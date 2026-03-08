@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Upload, Play, BookOpen, ArrowRight } from "lucide-react";
+import { Upload, Play, BookOpen, ArrowRight, Zap } from "lucide-react";
 import heroDashboard from "@/assets/hero-dashboard.jpg";
 
 const HeroSection = () => {
