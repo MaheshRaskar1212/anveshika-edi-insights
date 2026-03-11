@@ -53,9 +53,14 @@ const initialMessages: ChatMessage[] = [
   },
 ];
 
-const CopilotPanel = () => {
-  const [open, setOpen] = useState(true);
-  const [side, setSide] = useState<"right" | "left">("right");
+interface CopilotPanelProps {
+  open: boolean;
+  setOpen: (open: boolean) => void;
+  side: "right" | "left";
+  setSide: (side: "right" | "left") => void;
+}
+
+const CopilotPanel = ({ open, setOpen, side, setSide }: CopilotPanelProps) => {
   const [mode, setMode] = useState<"ask" | "auto">("ask");
   const [messages, setMessages] = useState<ChatMessage[]>(initialMessages);
   const [input, setInput] = useState("");
