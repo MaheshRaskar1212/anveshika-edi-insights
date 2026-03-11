@@ -112,13 +112,12 @@ const CopilotPanel = ({ open, setOpen, side, setSide }: CopilotPanelProps) => {
         {!open && (
           <motion.button
             key="collapsed-bar"
-            initial={{ opacity: 0, x: isRight ? 20 : -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: isRight ? 20 : -20 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             onClick={() => setOpen(true)}
-            className={`fixed top-1/2 -translate-y-1/2 z-50 flex flex-col items-center gap-2 py-4 px-1.5 rounded-lg glass-card cursor-pointer hover:border-primary/40 transition-colors ${
-              isRight ? "right-0 rounded-r-none" : "left-0 rounded-l-none"
-            }`}
+            className="flex flex-col items-center gap-2 py-4 px-1.5 cursor-pointer hover:border-primary/40 transition-colors border-border/50 bg-card/80 backdrop-blur-md"
+            style={{ borderLeft: isRight ? '1px solid hsl(var(--border))' : 'none', borderRight: !isRight ? '1px solid hsl(var(--border))' : 'none' }}
           >
             <Bot className="w-5 h-5 text-primary" />
             <span className="text-[10px] text-muted-foreground [writing-mode:vertical-lr] rotate-180">
